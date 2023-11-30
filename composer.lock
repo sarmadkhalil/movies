@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7b51c5279440b8c21f942ebfc6f530c",
+    "content-hash": "d799383f85548d1b38ad7831a6892e33",
     "packages": [
         {
             "name": "brick/math",
@@ -3168,6 +3168,36 @@
                 }
             ],
             "time": "2023-11-08T05:53:05+00:00"
+        },
+        {
+            "name": "sarmad/tmdb-client",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/sarmad/tmdb-client",
+                "reference": "d1060db0987e60088001fa1d836d962869eb5f6f"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sarmad\\TmdbClient\\TmdbClientServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sarmad\\TmdbClient\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Package to get data from tmdb",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "symfony/console",
@@ -8137,7 +8167,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "sarmad/tmdb-client": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -8,7 +8,7 @@ class TmdbClientServiceProvider extends ServiceProvider
 {
     public function boot() 
     {
-        dd("hello");
+        // dd("hello");
     }
 
     public function run()

@@ -2,7 +2,9 @@
     "name": "sarmad/tmdb-client",
     "description": "Package to get data from tmdb",
     "license": "MIT",
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    },
     "autoload": {
         "psr-4": {
             "Sarmad\\TmdbClient\\":"src/"

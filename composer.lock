@@ -3175,7 +3175,10 @@
             "dist": {
                 "type": "path",
                 "url": "packages/sarmad/tmdb-client",
-                "reference": "d1060db0987e60088001fa1d836d962869eb5f6f"
+                "reference": "eb367f4826572de76eb76e04b94a695c076b4d0a"
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.8"
             },
             "type": "library",
             "extra": {

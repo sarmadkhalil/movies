@@ -12,10 +12,11 @@ class TmdbClientTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_getMoviesDataFromClient(): void
+    public function test_getMoviesDataFromTmdbClient(): void
     {
         $response = TmdbClient::getMoviesWithData(1);
         
         $this->assertNotNull($response);
+        $this->assertGreaterThan(1, sizeof($response));
     }
 }

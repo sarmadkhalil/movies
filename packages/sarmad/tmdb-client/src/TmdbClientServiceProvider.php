@@ -13,6 +13,8 @@ class TmdbClientServiceProvider extends ServiceProvider
 
     public function run()
     {
-        
+        $this->app->singleton(TmdbClient::class, function() {
+            return new TmdbClient();
+        });
     }
 }

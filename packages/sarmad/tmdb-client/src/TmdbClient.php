@@ -15,7 +15,7 @@ class TmdbClient
         try {
             $response = $client->request('GET', 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page='.$page.'&sort_by=popularity.desc&with_genres=AND', [
                 'headers' => [
-                    'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzM2NkNDFkODczZmIzM2VhMzRlYjc0MzNjZjVlYjFiNyIsInN1YiI6IjY1Njc0ZGUzYzJiOWRmMDEwMDRjYmMyYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.phjKqdBr9gq7oZ9P0TvNrfqNASW4j3qhnOc1xMp7v7w',
+                    'Authorization' => 'Bearer ' . config('tmdbconfig.auth_token'),
                     'accept' => 'application/json',
                 ],
             ]);

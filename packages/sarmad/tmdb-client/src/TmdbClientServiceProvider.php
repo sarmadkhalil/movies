@@ -8,7 +8,9 @@ class TmdbClientServiceProvider extends ServiceProvider
 {
     public function boot() 
     {
-        // dd("hello");
+        $this->publishes([
+            __DIR__ . '/../config/tmdbconfig.php' => config_path('tmdbconfig.php')
+        ]);
     }
 
     public function run()

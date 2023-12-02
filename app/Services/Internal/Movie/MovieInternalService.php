@@ -1,23 +1,26 @@
 <?php
 
-namespace App\Services\Internal;
+namespace App\Services\Internal\Movie;
 
 use App\Models\Movie;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Pagination\LengthAwarePaginator;
 
-interface MovieService {
-        
+interface MovieInternalService {
+    
+    
     /**
      * Gets the list of movies from local storage
      *
-     * @return array
+     * @param  mixed $perPage
+     * @return LengthAwarePaginator
      */
-    public function getMovies() : array;
+    public function getMovies(int $perPage) : LengthAwarePaginator;
         
     /**
      * Store array Movies to local storage
      * 
-     * this function takes in array of Movies, loops through each item and stores it in database
+     * This function takes in array of Movies, loops through each item and stores it in database
      *
      * @param  Movie[] $movies
      * @return void
@@ -27,7 +30,7 @@ interface MovieService {
     /**
      * Store array Movies to local storage
      * 
-     * this function takes in array of Movies, loops through each item and stores it in database
+     * This function takes in array of Movies, loops through each item and stores it in database
      *
      * @param  Movie $movie
      * @return void
@@ -35,7 +38,7 @@ interface MovieService {
     public function storeMovie(Movie $movie) : void;
     
     /**
-     * getSingleMovie
+     * Get single movie based on the given id
      *
      * @param  int $id
      * @return ModelNotFoundException

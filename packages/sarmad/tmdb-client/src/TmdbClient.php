@@ -6,7 +6,15 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
 class TmdbClient
-{
+{    
+    /**
+     * Get movies list from the movie database api
+     * 
+     * Each page contains 10 movies
+     *
+     * @param  int $page
+     * @return array
+     */
     public static function getMoviesWithData(int $page) : array
     {
         $movies = [];

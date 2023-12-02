@@ -5,16 +5,12 @@ namespace App\Services\Internal;
 use App\Models\Movie;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-/**
- * 
- */
 interface MovieService {
         
     /**
      * Gets the list of movies from local storage
      *
      * @return array
-     * @throws ModelNotFoundException
      */
     public function getMovies() : array;
         

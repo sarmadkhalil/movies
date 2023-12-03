@@ -35,7 +35,7 @@
                         <div class="pl-2 text-xs">
                             <button type="button" class="border border-dark-400 text-dark-400 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-900 hover:text-white focus:outline-none focus:shadow-outline">TRAILER</button>
 
-                            <button type="button" class="border border-dark-400 text-dark-400 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-900 hover:text-white focus:outline-none focus:shadow-outline">VOTE</button>
+                            <a type="button" href="{{route('movie.vote.create', $movie->id)}}" class="border border-dark-400 text-dark-400 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-900 hover:text-white focus:outline-none focus:shadow-outline">VOTE</a>
                         </div>
                     </div>
                 </div>

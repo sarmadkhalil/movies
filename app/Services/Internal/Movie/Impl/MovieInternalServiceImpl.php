@@ -4,6 +4,8 @@ namespace App\Services\Internal\Movie\Impl;
 
 use App\Models\Movie;
 use App\Services\Internal\Movie\MovieInternalService;
+use Illuminate\Contracts\Queue\EntityNotFoundException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Log;
 
@@ -50,7 +52,14 @@ class MovieInternalServiceImpl implements MovieInternalService {
     }
     
     public function getSingleMovie(int $id) : Movie {
-        return Movie::findOrFail($id); 
+        try{
+            Log::info("Search for movie with id: ".$id);
+            $movie = Movie::findOrFail($id);
+
+            return $movie;
+        }catch (ModelNotFoundException $e) {
+            throw $e;
+        } 
     }
 
 }

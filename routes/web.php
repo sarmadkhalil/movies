@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/movies', [MovieController::class, 'index'])->name('movie.index');
 
     Route::get('/movies/{id}/vote', [MovieVoteController::class, 'create'])->name('movie.vote.create');
+    Route::post('/movies/{id}/vote', [MovieVoteController::class, 'store'])->name('movie.vote.store');
 });
 
 

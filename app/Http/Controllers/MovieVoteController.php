@@ -28,4 +28,9 @@ class MovieVoteController extends Controller
             return redirect()->back()->withErrors(['msg' => 'Something went wrong, please try later!']);
         }
     }
+
+    public function store(Request $request, $id) {
+        dd($request);
+        return redirect()->route('movie.index');
+    }
 }

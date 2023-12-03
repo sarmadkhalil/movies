@@ -35,11 +35,32 @@
 
                         <div class="pl-md-5 pt-4">
                             <h3 class="text-lg text-gray-800 leading-tight">Add your vote : </h3>
+                            <div class="stars">
+                                <form id="rating-form" method="post" action="{{route('movie.vote.store', $movie->id)}}">
+                                    @csrf
+                                    <input class="star star-5 star-select" id="star-5" value="5" type="radio" name="star" />
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4 star-select" id="star-4" value="4" type="radio" name="star" />
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3 star-select" id="star-3" value="3" type="radio" name="star" />
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2 star-select" id="star-2" value="2" type="radio" name="star" />
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1 star-select" id="star-1" value="1" type="radio" name="star" />
+                                    <label class="star star-1" for="star-1"></label>
+
+                                    <button class="border border-dark-400 text-dark-400 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-900 hover:text-white focus:outline-none focus:shadow-outline">submit</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+
+    </script>
 
 </x-app-layout>

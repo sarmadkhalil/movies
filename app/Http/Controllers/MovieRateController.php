@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class MovieVoteController extends Controller
+class MovieRateController extends Controller
 {
     private MovieInternalService $movieInternalService;
     private RatingService $ratingService;

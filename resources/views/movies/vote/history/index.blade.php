@@ -7,8 +7,8 @@
         <p class="mt-3">Get recommendations for movies based on your voting pattern.</p>
     </x-slot>
 
-    <div class="py-12 place-content-center" >
-        @foreach ($ratings as $rating)
+    <div class="py-2 place-content-center">
+        @forelse ($ratings as $rating)
         <div class="grid place-items-center pt-9">
             <div class="bg-white rounded-md bg-gray-800 shadow-lg">
                 <div class="md:flex px-5 leading-none max-w-4xl">
@@ -39,8 +39,17 @@
                 </div>
             </div>
         </div>
-        @endforeach
-        
+        @empty
+        <div class="py-5">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                    <p>No History</p>
+                </div>
+            </div>
+        </div>
+
+        @endforelse
+
     </div>
 
 </x-app-layout>

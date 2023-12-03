@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
         $user->email_verified_at = now();
         $user->password = bcrypt('password');
         $user->remember_token = "asfasfawetwrtwaetasgadg";
+        $user->is_admin = true;
         $user->save();
     }
 }

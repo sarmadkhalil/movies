@@ -2,7 +2,9 @@
 
 namespace App\Services\Internal\Recommendation;
 
+use Illuminate\Support\Collection;
+
 interface RecommendationService {
 
-    public function getRecommendedMovies(int $userId);
+    public function getRecommendedMovies(int $userId) : Collection;
 }

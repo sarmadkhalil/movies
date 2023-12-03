@@ -8,6 +8,8 @@ use App\Services\Internal\Movie\Impl\MovieInternalServiceImpl;
 use App\Services\Internal\Movie\MovieInternalService;
 use App\Services\Internal\Rating\Impl\RatingServiceImpl;
 use App\Services\Internal\Rating\RatingService;
+use App\Services\Internal\Recommendation\Impl\RecommendationServiceImpl;
+use App\Services\Internal\Recommendation\RecommendationService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,6 +31,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(RatingService::class, function ($app, $param) {
             return new RatingServiceImpl();
+        });
+
+        $this->app->bind(RecommendationService::class, function ($app, $param) {
+            return new RecommendationServiceImpl();
         });
     }
 

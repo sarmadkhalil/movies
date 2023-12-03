@@ -28,8 +28,6 @@
 
                         <p class="flex text-md px-5 my-2">
                             Votes: {{$movie->votes}}/10
-                            <span class="font-bold px-2">|</span>
-                            Mood: Dark
                         </p>
 
                         <div class="pl-2 text-xs">
@@ -42,10 +40,6 @@
             </div>
         </div>
         @endforeach
-
-        <div class="max-w-4xl place-items-center mt-4">
-            {{$movies->links()}}
-        </div>
         
     </div>
 

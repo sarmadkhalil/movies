@@ -22,7 +22,7 @@ class MovieSeeder extends Seeder
      */
     public function run(): void
     {
-        $numberOfPages = 10;
+        $numberOfPages = 50;
         $movies = [];
         try {
             Log::debug('Storing movie with external id to Database');

@@ -16,7 +16,8 @@ class MovieInternalServiceImpl implements MovieInternalService {
         
     public function storeMovies(array $movies) : void {
         try {
-            foreach ($movies as $movie) { 
+            foreach ($movies as $movie) {
+                // dd($movie->id); 
                 Log::debug('Storing movie with external id = '.$movie->id.' to Database');
                 $genres = "";
                 $i=0;

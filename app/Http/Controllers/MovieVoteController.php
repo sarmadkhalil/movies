@@ -17,6 +17,6 @@ class MovieVoteController extends Controller
     public function index() {
         Log::info("This page is used to get the list of movies to vote on.");
         $movies = $this->movieInternalService->getMovies(10);
-        return view('movies.vote.index');
+        return view('movies.vote.index')->with('movies', $movies);
     }
 }

@@ -39,6 +39,7 @@ class MovieIternalServiceTest extends TestCase
         $mock->title = fake()->title();
         $mock->overview= fake()->text(300);
         $mock->poster_path= fake()->image();
+        $mock->backdrop_path= fake()->image();
         $mock->release_date= fake()->date('Y-m-d');
         $mock->vote_average= fake()->randomDigit();
         $mock->genre_ids= $genre;

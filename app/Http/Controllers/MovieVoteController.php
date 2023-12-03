@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\Internal\Movie\MovieInternalService;
+use App\Services\Internal\Rating\RatingService;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -11,9 +12,11 @@ use Illuminate\Support\Facades\Log;
 class MovieVoteController extends Controller
 {
     private MovieInternalService $movieInternalService;
+    private RatingService $ratingService;
 
-    public function __construct(MovieInternalService $movieInternalService) {
+    public function __construct(MovieInternalService $movieInternalService, RatingService $ratingService) {
         $this->movieInternalService = $movieInternalService;
+        $this->ratingService = $ratingService;
     }
     public function create($id) {
         try{
@@ -30,7 +33,13 @@ class MovieVoteController extends Controller
     }
 
     public function store(Request $request, $id) {
-        dd($request);
-        return redirect()->route('movie.index');
+        try {
+            $this->ratingService->storeRating(auth()->user()->id, $id, $request['star']);
+
+            return redirect()->route('movie.index');
+        } catch (Exception $e) {
+            Log::error($e->getMessage().', '.$e->getTrace());
+            return redirect()->back()->withErrors(['msg' => 'Something went wrong, please try again later!']);
+        }
     }
 }

@@ -18,7 +18,7 @@ class UserController extends Controller
     {
         $users = $this->userService->getNonAdminUsers();
 
-        return view('admin.user.index');
+        return view('admin.user.index')->with('users', $users);
         
     }
 }

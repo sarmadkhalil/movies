@@ -39,6 +39,7 @@ class MovieInternalServiceImpl implements MovieInternalService {
                 $movie1->votes = $movie->vote_average;
                 $movie1->genre = $genres;
                 $movie1->poster_path = $movie->poster_path;
+                $movie1->backdrop_path = $movie->backdrop_path;
                 $movie1->save();
                 // $this->storeMovie($movie1);
             }
@@ -57,7 +58,7 @@ class MovieInternalServiceImpl implements MovieInternalService {
             $movie = Movie::findOrFail($id);
 
             return $movie;
-        }catch (ModelNotFoundException $e) {
+        } catch (ModelNotFoundException $e) {
             throw $e;
         } 
     }

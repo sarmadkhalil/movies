@@ -1,0 +1,33 @@
+#vote-cover-image {
+    max-width: 1000px;
+}
+
+@media screen and (min-width: 320px) {
+    #vote-cover-image {
+        max-width: 300px;
+    }    
+}
+
+@media screen and (min-width: 375px) {
+    #vote-cover-image {
+        max-width: 370px;
+    }    
+}
+
+@media screen and (min-width: 425px) {
+    #vote-cover-image {
+        max-width: 420px;
+    }    
+}
+
+@media screen and (min-width: 768px) {
+    #vote-cover-image {
+        max-width: 765px;
+    }    
+}
+
+@media screen and (min-width: 1024px) {
+    #vote-cover-image {
+        max-width: 1000px;
+    }    
+}

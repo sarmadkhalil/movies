@@ -1,5 +1,6 @@
 @import '/node_modules/font-awesome/css/font-awesome.css';
 @import './icons.css';
+@import './style.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

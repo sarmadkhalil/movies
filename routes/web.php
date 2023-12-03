@@ -3,6 +3,7 @@
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\MovieVoteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RatingHistoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,8 +32,10 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/movies', [MovieController::class, 'index'])->name('movie.index');
 
-    Route::get('/movies/{id}/vote', [MovieVoteController::class, 'create'])->name('movie.vote.create');
-    Route::post('/movies/{id}/vote', [MovieVoteController::class, 'store'])->name('movie.vote.store');
+    Route::get('/movies/{id}/rate', [MovieVoteController::class, 'create'])->name('movie.vote.create');
+    Route::post('/movies/{id}/rate', [MovieVoteController::class, 'store'])->name('movie.vote.store');
+
+    Route::get('/ratings/history', [RatingHistoryController::class, 'index'])->name('rate.history.index');
 });
 
 

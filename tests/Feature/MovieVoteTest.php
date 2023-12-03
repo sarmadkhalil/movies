@@ -20,7 +20,7 @@ class MovieVoteTest extends TestCase
         $this->seed(MovieSeeder::class);
 
         $user = User::factory()->create();
-        $response = $this->actingAs($user)->get('/movies/2/vote');
+        $response = $this->actingAs($user)->get('/movies/2/rate');
 
         $response->assertStatus(200);
     }
@@ -29,7 +29,7 @@ class MovieVoteTest extends TestCase
     {
         $this->seed([MovieSeeder::class, UserSeeder::class]);
         $user = User::factory()->create();
-        $response = $this->actingAs($user)->post('/movies/2/vote', ['star' => 3]);
+        $response = $this->actingAs($user)->post('/movies/2/rate', ['star' => 3]);
 
         $response->assertStatus(302);
         $response->assertRedirect('movies');

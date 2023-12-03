@@ -11,7 +11,7 @@ class MovieVoteTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_pageLoadsAndReturns200() {
+    public function test_movieVotingPageLoadsAndReturns200() {
         $user = User::factory()->create();
         $response = $this->actingAs($user)->get('/movies/votes');
 

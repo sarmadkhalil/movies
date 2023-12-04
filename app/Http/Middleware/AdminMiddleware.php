@@ -19,6 +19,6 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect()->route('home')->with('error', 'Unauthorized Access');
+        return redirect()->route('dashboard')->with('error', 'Unauthorized Access');
     }
 }

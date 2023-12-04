@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\MovieRateController;
 use App\Http\Controllers\ProfileController;
@@ -36,6 +37,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/movies/{id}/rate', [MovieRateController::class, 'store'])->name('movie.vote.store');
 
     Route::get('/ratings/history', [RatingHistoryController::class, 'index'])->name('rate.history.index');
+
+    Route::get('/admin/users', [UserController::class, 'index'])->middleware('admin')->name('admin.users.index');
+    Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
+    Route::get('/admin/users/{id}', [UserController::class, 'delete'])->name('admin.users.delete');
 });
 
 

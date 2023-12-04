@@ -12,4 +12,12 @@ interface UserService
      * @return LengthAwarePaginator
      */
     public function getNonAdminUsers() : LengthAwarePaginator;
+    
+    /**
+     * createNonAdminUser
+     *
+     * @param  mixed $request
+     * @return void
+     */
+    public function createNonAdminUser($request) : void;
 }

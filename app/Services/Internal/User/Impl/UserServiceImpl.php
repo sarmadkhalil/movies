@@ -12,4 +12,13 @@ class UserServiceImpl implements UserService
     {
         return User::where('is_admin', false)->paginate();
     }
+
+    public function createNonAdminUser($request): void
+    {
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt('password'),
+        ]);
+    }
 }

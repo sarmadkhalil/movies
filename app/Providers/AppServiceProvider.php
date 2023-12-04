@@ -10,6 +10,8 @@ use App\Services\Internal\Rating\Impl\RatingServiceImpl;
 use App\Services\Internal\Rating\RatingService;
 use App\Services\Internal\Recommendation\Impl\RecommendationServiceImpl;
 use App\Services\Internal\Recommendation\RecommendationService;
+use App\Services\Internal\User\Impl\UserServiceImpl;
+use App\Services\Internal\User\UserService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -35,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(RecommendationService::class, function ($app, $param) {
             return new RecommendationServiceImpl();
+        });
+
+        $this->app->bind(UserService::class, function ($app, $param) {
+            return new UserServiceImpl();
         });
     }
 
